@@ -1,0 +1,39 @@
+Function: updateDisplay()
+-------------------------
+Converts the total seconds into minutes and seconds.
+Math.floor(timeInSeconds / 60) gives full minutes.
+timeInSeconds % 60 gives the remaining seconds.
+padStart(2, '0') makes sure single digits show like 05 instead of 5.
+Updates the <h1 id="timer"> element to show the current time.
+
+===========================================================================
+
+Function: startTimer()
+-----------------------
+Prevents starting multiple intervals at once.
+Uses setInterval to run a function every 1000 milliseconds (1 second).
+
+On each tick:
+Decreases timeInSeconds by 1.
+Updates the display.
+When it reaches 0:
+Stops the timer with clearInterval.
+Sets timerInterval to null.
+Displays an alert: “Time’s up!”
+
+==========================================================================
+
+Function: resetTimer()
+
+Stops the countdown.
+Resets time back to 5 minutes.
+Refreshes the timer display.
+
+=============================================================================
+| Concept            | Purpose                                              |
+| ------------------ | ---------------------------------------------------- |
+| `setInterval()`    | Runs a function every X milliseconds (1 second here) |
+| `clearInterval()`  | Stops the interval/timer                             |
+| `padStart(2, '0')` | Formats numbers to always have two digits            |
+| DOM Manipulation   | Updates the `<h1>` timer element using `textContent` |
+
